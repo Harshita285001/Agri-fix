@@ -1,0 +1,32 @@
+#importing modules
+import pandas as pd
+import numpy as np
+import cv2
+
+#taking input of image
+cam_port = 0
+cam = VideoCapture(cam_port)
+result, image = cam.read()
+if result:
+imshow("GeeksForGeeks", image)
+imwrite("GeeksForGeeks.png", image)
+waitKey(0)
+    destroyWindow("GeeksForGeeks")
+else:
+    print("No image detected. Please! try again")
+
+#import csvfile
+r6 = pd.read_csv (r'C:\Users\Lenovo\Downloads\report (6).csv')
+# creating a list of column names by
+# calling the .columns
+list_of_column_names = list(r6.columns)
+ 
+# displaying the list of column names
+print('List of column names : ',
+      list_of_column_names)
+
+#COMPARING INPUT IMAGE AND DATABASEAND PRINT OUTPUT
+df = pd. read_csv("C:\\Users\\Lenovo\\Downloads\\report (6).csv", usecols=list_of_column_names)
+print(df["NAME"])
+if(reult==df["PICTURE"]):
+    print(df["ID","NAME","SYMPTOMS","PREVENTION","PICTURE"])
